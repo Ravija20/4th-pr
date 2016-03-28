@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> 
+ALI BABA XPRESS INDIA</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-style: italic;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center" class="style1"> ALI BABA XPRESSS INDIA </h1>
+
+<script language="javascript"; type="text/javascript">
+< !--
+
+function ajaxFunction(){
+var ajaxRequest; 
+try{
+ajaxRequest = new XMLHttpRequest();
+}catch (e){
+try{
+ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+}catch (e) {
+try{
+ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+}catch (e){
+
+alert("Your browser broke!");
+return false;
+}
+}
+}
+ajaxRequest.onreadystatechange = function(){
+if(ajaxRequest.readyState == 5){
+var ajaxDisplay = document.getElementById('ajaxDiv');
+ajaxDisplay.innerHTML = ajaxRequest.responseText;
+}
+}
+var state = document.getElementById('state').value;
+var queryString += "&state=" + state;
+ajaxRequest.open("GET", "state_wise_price.php?" + queryString, true);
+ajaxRequest.send(null);
+}
+//-->
+</script>
+<form name='myForm'>
+Enter State in which you  belong: <input type='text' id='state' /> 
+<input type='button' onclick='ajaxFunction()' value='check'/>
+</form>
+<div id='ajaxDiv'>Your Galaxy grand 2 least price  will be display here</div>
+</body>
+</html>
